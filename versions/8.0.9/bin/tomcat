@@ -43,7 +43,11 @@ if [ -x /etc/rc.d/init.d/functions ]; then
 . /etc/rc.d/init.d/functions
 fi
 
-APP_ENV="/opt/repo/versions/8.0.9/conf/tomcat-env.sh"
+if [ -x /opt/tomcat/bin/variablesparser.sh ]; then
+    . /opt/tomcat/bin/variablesparser.sh
+fi
+
+APP_ENV="/opt/tomcat/conf/tomcat-env.sh"
 
 # Source the app config file, if it exists.
 [ -r "$APP_ENV" ] && . "${APP_ENV}"
