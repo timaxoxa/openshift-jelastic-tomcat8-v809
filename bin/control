@@ -66,18 +66,18 @@ while [ -h "$PROG" ]; do
 done
 
 PROG="`basename $PROG`"
-HA=$([ $(LC_ALL=C chkconfig --list vtund | grep -o "3:on") ] && { echo on; } || { echo off; })
+#HA=$([ $(LC_ALL=C chkconfig --list vtund | grep -o "3:on") ] && { echo on; } || { echo off; })
 
 # If TOMCAT_USER is not set, use "tomcat".
 if [ -z "$TOMCAT_USER" ]; then
-    TOMCAT_USER="tomcat"
+    TOMCAT_USER="jelastic"
 fi
 
 # Since the daemon function will run $TOMCAT_SCRIPT, no environment
 # stuff should be defined here anymore.  Please use the
 # /opt/tomcat/conf/tomcat-env.sh file instead.
 
-SERVERXML="/opt/tomcat/conf/server.xml"
+SERVERXML="/opt/repo/versions/8.0.9/conf/server.xml"
 let RETVAL=0
 JVM_PID="0"
 JVM_RUNNING="false"
@@ -85,7 +85,7 @@ JVM_RUNNING="false"
 
 #################### Hivext mod #####################
 
-TOMCAT_HOME='/opt/tomcat'
+TOMCAT_HOME='/opt/repo/versions/8.0.9'
 TOMCAT_MEMORY_CONF='conf/tomcat-env.sh'
 
 clean_env(){
