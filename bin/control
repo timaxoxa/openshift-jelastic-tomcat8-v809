@@ -415,6 +415,9 @@ case "$1" in
     stop)
         stop
         ;;
+    build | deploy)
+        exit 0;
+        ;;
     restart)
         stop
         if [ $RETVAL -eq 0 ]; then
