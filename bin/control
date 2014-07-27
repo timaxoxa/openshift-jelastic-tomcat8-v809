@@ -4,7 +4,6 @@
 #  $Date$
 #  $Author$
 #  $HeadURL$
-exit 0;
 #
 # Linux init script for the Apache Tomcat servlet container.
 #
