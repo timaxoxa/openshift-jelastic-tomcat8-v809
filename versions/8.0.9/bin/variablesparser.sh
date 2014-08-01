@@ -1,5 +1,5 @@
 #!/bin/bash
-CONFFILE='/opt/tomcat/conf/variables.conf'
+CONFFILE='/opt/repo/versions/8.0.9/conf/variables.conf'
 JELASTIC_GC_AGENT="jelastic-gc-agent.jar"
 
 SED=`which sed`

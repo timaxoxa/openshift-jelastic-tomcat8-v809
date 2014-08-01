@@ -45,6 +45,10 @@ fi
 SED=$(which sed)
 GREP=$(which grep)
 
+if [ -x /opt/repo/versions/8.0.9/bin/variablesparser.sh ]; then
+    . /opt/repo/versions/8.0.9/bin/variablesparser.sh
+fi
+
 APP_ENV="/opt/repo/versions/8.0.9/conf/tomcat-env.sh"
 
 # Source the app config file, if it exists.
