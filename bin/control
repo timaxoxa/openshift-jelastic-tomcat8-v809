@@ -419,9 +419,9 @@ case "$1" in
         exit 0;
         ;;
     restart)
-        stop
+        (stop)
         if [ $RETVAL -eq 0 ]; then
-            start
+            (start)
         fi
         ;;
     status)
